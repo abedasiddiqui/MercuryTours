@@ -65,7 +65,7 @@ public class DemoAutTest {
         driver.findElement(By.name("password")).sendKeys("mercury");
         driver.findElement(By.name("login")).click();
         try{
-            assertEquals("Find a Flight: ercury Tours:", driver.getTitle());
+            assertEquals("Find a Flight: Mercury Tours:", driver.getTitle());
             System.out.println("Login Successful");
         }catch(Throwable t){
            System.out.println("Login Not Successful");
