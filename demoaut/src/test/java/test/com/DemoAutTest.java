@@ -16,6 +16,7 @@ import static org.junit.Assert.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
 /**
@@ -52,7 +53,9 @@ public class DemoAutTest {
 @Test
  public void demoaut() throws Exception{
         System.setProperty("webdriver.chrome.driver", "c:\\data\\chromedriver.exe");
+        //System.setProperty("webdriver.gecko.driver", "c:\\data\\geckodriver.exe");
         WebDriver driver = new ChromeDriver();
+        //WebDriver driver=new FirefoxDriver();
         driver.get("http://newtours.demoaut.com");
         try{
             assertEquals("Welcome: Mercury Tours", driver.getTitle()); 
@@ -64,14 +67,16 @@ public class DemoAutTest {
         driver.findElement(By.name("userName")).sendKeys("mercury");
         driver.findElement(By.name("password")).sendKeys("mercury");
         driver.findElement(By.name("login")).click();
+         //Thread.sleep(1000);  
         try{
             assertEquals("Find a Flight: Mercury Tours:", driver.getTitle());
             System.out.println("Login Successful");
+            Thread.sleep(1000);
         }catch(Throwable t){
            System.out.println("Login Not Successful");
         }
         driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[2]/td[2]/b/font/input[2]")).click();
-        Thread.sleep(1000);        
+             
         Select passenger=new Select(driver.findElement(By.name("passCount")));
         passenger.selectByVisibleText("3");
         Select from=new Select(driver.findElement(By.name("fromPort")));

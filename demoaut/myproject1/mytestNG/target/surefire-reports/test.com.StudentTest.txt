@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: test.com.DemoAutTest
+Test set: test.com.StudentTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.683 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.276 sec
